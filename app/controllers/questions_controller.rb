@@ -4,9 +4,10 @@ class QuestionsController < ApplicationController
 
   def answer
     # raise
-    if params[:answer] == "I am going to work"
+    @question = params[:question]
+    if @question == "I am going to work"
       @answer = "Great!"
-    elsif params[:answer][-1] == "?"
+    elsif @question[-1] == "?"
       @answer = "Silly question, get dressed and go to work!"
     else
       @answer = "I don't care, get dressed and go to work!"
